@@ -10,7 +10,7 @@ import { useColorScheme } from '@/components/useColorScheme';
 
 export {
   // Catch any errors thrown by the Layout component.
-  ErrorBoundary,
+  ErrorBoundary
 } from 'expo-router';
 
 export const unstable_settings = {
@@ -52,7 +52,13 @@ function RootLayoutNav() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="pages/Conversation-detail" options={{ title: 'Conversation-detail' }} />
+        <Stack.Screen name="pages/quick-login" options={{ title: 'quick-login' }} />
+        <Stack.Screen name="pages/chat" options={{ headerShown: false }} />
+        <Stack.Screen name="pages/sound-edit" options={{ headerShown: false }} />
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
+        <Stack.Screen name="pages/mine" options={{ headerShown: false }} />
+        <Stack.Screen name="pages/create-role" options={{ headerShown: false }} />
       </Stack>
     </ThemeProvider>
   );
